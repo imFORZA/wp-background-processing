@@ -1,6 +1,17 @@
 <?php
+/**
+ * WP Job
+ *
+ * @package WP Background Processing
+ */
 
 if ( ! class_exists( 'WP_Job' ) ) {
+	/**
+	 * WP Job
+	 *
+	 * @param  integer $delay [description]
+	 * @return [type]         [description]
+	 */
 	abstract class WP_Job {
 
 		/**
@@ -21,7 +32,7 @@ if ( ! class_exists( 'WP_Job' ) ) {
 		/**
 		 * Release a job back onto the queue.
 		 *
-		 * @param int $delay
+		 * @param int $delay Delay.
 		 */
 		protected function release( $delay = 0 ) {
 			$this->released      = true;

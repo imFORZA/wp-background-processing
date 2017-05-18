@@ -21,7 +21,7 @@ require_once plugin_dir_path( __FILE__ ) . 'classes/queues/wp-queue-interface.ph
 require_once plugin_dir_path( __FILE__ ) . 'classes/queues/wp-database-queue.php';
 require_once plugin_dir_path( __FILE__ ) . 'functions.php';
 
-// Add WP CLI commands
+// Add WP CLI commands.
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
 	require_once plugin_dir_path( __FILE__ ) . 'classes/workers/wp-cli-worker.php';
 	require_once plugin_dir_path( __FILE__ ) . 'classes/cli/queue-command.php';
@@ -32,5 +32,5 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 global $wp_queue, $wpdb;
 $wp_queue = apply_filters( 'wp_queue_instance', new WP_Database_Queue( $wpdb ) );
 
-// Instantiate HTTP queue worker
+// Instantiate HTTP queue worker.
 new WP_Http_Worker( $wp_queue );
